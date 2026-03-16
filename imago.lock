@@ -1,35 +1,20 @@
 version = 1
 
 [requested]
-fingerprint = "d001ebac75d3897f33c311e66d2fb479908f69cf85423cca711ad2b1bb456155"
+fingerprint = "4530305ba5b270c2b388674099833e0308450691249c322cb8ada426b244fa02"
 
 [[requested.dependencies]]
-id = "dep:55441003b6a0d0b9aef75156910eb53f50c3b270c9e76a62566940c45172135c"
+id = "dep:99d544eea2a4df901754c86437747b517c0a9dc3c07ccb6dfd51e0eb22c4a34d"
 kind = "native"
-version = "0.1.0"
+version = "0.2.0"
 source_kind = "oci"
-source = "ghcr.io/yieldspace/imago/experimental-gpio"
+source = "ghcr.io/yieldspace/imago/usb"
 declared_requires = []
 
 [[resolved.dependencies]]
-request_id = "dep:55441003b6a0d0b9aef75156910eb53f50c3b270c9e76a62566940c45172135c"
-resolved_name = "imago:experimental-gpio"
-resolved_version = "0.1.0"
-wit_path = "wit/deps/imago-experimental-gpio-0.1.0"
-wit_tree_digest = "a8c94d050c2b4fccd40bb4b4cecbb4118c5a221f0d2b0b62d24caaefb5aaf1ef"
+request_id = "dep:99d544eea2a4df901754c86437747b517c0a9dc3c07ccb6dfd51e0eb22c4a34d"
+resolved_name = "imago:usb"
+resolved_version = "0.2.0"
+wit_path = "wit/deps/imago-usb-0.2.0"
+wit_tree_digest = "68d50c61a971f9dc18e7da98023fb6546dca56f4b4744648a5959bc6bef570f7"
 requires_request_ids = []
-
-[[resolved.packages]]
-package_ref = "wasi:io@0.2.6#"
-name = "wasi:io"
-version = "0.2.6"
-requirement = "=0.2.6"
-source = "ghcr.io/wasi/io"
-path = "wit/deps/wasi-io-0.2.6"
-digest = "sha256:235d688e3599460ea744d8e64ed12a8c8a09b1076c5f19bd7bdd00a7edd96e5b"
-
-[[resolved.package_edges]]
-from_kind = "dependency"
-from_ref = "dep:55441003b6a0d0b9aef75156910eb53f50c3b270c9e76a62566940c45172135c"
-to_package_ref = "wasi:io@0.2.6#"
-reason = "wit-import"

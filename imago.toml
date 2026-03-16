@@ -3,24 +3,30 @@ main = "target/wasm32-wasip2/release/milkv-led.wasm"
 type = "cli"
 
 [[dependencies]]
-version = "0.1.0"
+version = "0.2.0"
 kind = "native"
-oci = "ghcr.io/yieldspace/imago/experimental-gpio"
-
-[resources.gpio]
-digital_pins = [
-    { label = "GPI459", value_path = "/sys/class/gpio/gpio459/value", supports_input = false, supports_output = true, default_active_level = "active-high", allow_pull_resistor = true },
-]
+oci = "ghcr.io/yieldspace/imago/usb"
 
 [build]
 command = "cargo build --target wasm32-wasip2 --release"
 
+[[assets]]
+path = "assets/captures/.gitkeep"
+
+[[resources.mounts]]
+asset_dir = "assets/captures"
+guest_path = "/captures"
+
+[resources.usb]
+paths = [
+    "/dev/bus/usb/001/002",
+]
+
 [capabilities]
 wasi = true
 
-[target.default]
-remote = "192.168.42.1:4443"
-client_key = "certs/client.key"
-
 [capabilities.deps]
-"imago:experimental-gpio" = ["*"]
+"imago:usb" = ["*"]
+
+[target.default]
+remote = "ssh://root@192.168.2.3"
