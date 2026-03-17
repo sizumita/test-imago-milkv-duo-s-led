@@ -1,0 +1,102 @@
+labels_path = "/app/assets/models/coco.names"
+
+[input]
+name = "images"
+width = 640
+height = 640
+channel_order = "rgb"
+dtype = "i8"
+qscale = 126.99897766113281
+zero_point = 0
+normalize_divisor = 255.0
+
+[thresholds]
+score = 0.25
+nms_iou = 0.45
+
+[[heads]]
+stride = 8
+anchors = [
+    [10.0, 13.0],
+    [16.0, 30.0],
+    [33.0, 23.0],
+]
+
+[heads.box_tensor]
+name = "output0_Gather__reshape"
+dimensions = [3, 80, 80, 4]
+dtype = "i8"
+qscale = 0.14901812374591827
+zero_point = 0
+
+[heads.objectness_tensor]
+name = "372_Gather__reshape"
+dimensions = [3, 80, 80, 1]
+dtype = "i8"
+qscale = 0.14901812374591827
+zero_point = 0
+
+[heads.classes_tensor]
+name = "373_Gather__reshape"
+dimensions = [3, 80, 80, 80]
+dtype = "i8"
+qscale = 0.14901812374591827
+zero_point = 0
+
+[[heads]]
+stride = 16
+anchors = [
+    [30.0, 61.0],
+    [62.0, 45.0],
+    [59.0, 119.0],
+]
+
+[heads.box_tensor]
+name = "389_Gather__reshape"
+dimensions = [3, 40, 40, 4]
+dtype = "i8"
+qscale = 0.12604719400405884
+zero_point = 0
+
+[heads.objectness_tensor]
+name = "390_Gather__reshape"
+dimensions = [3, 40, 40, 1]
+dtype = "i8"
+qscale = 0.12604719400405884
+zero_point = 0
+
+[heads.classes_tensor]
+name = "391_Gather__reshape"
+dimensions = [3, 40, 40, 80]
+dtype = "i8"
+qscale = 0.12604719400405884
+zero_point = 0
+
+[[heads]]
+stride = 32
+anchors = [
+    [116.0, 90.0],
+    [156.0, 198.0],
+    [373.0, 326.0],
+]
+
+[heads.box_tensor]
+name = "407_Gather__reshape"
+dimensions = [3, 20, 20, 4]
+dtype = "i8"
+qscale = 0.11729186028242111
+zero_point = 0
+
+[heads.objectness_tensor]
+name = "408_Gather__reshape"
+dimensions = [3, 20, 20, 1]
+dtype = "i8"
+qscale = 0.11729186028242111
+zero_point = 0
+
+[heads.classes_tensor]
+name = "409_Gather__reshape"
+dimensions = [3, 20, 20, 80]
+dtype = "i8"
+qscale = 0.11729186028242111
+zero_point = 0

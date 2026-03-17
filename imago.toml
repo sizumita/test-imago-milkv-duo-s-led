@@ -13,9 +13,22 @@ command = "cargo build --target wasm32-wasip2 --release"
 [[assets]]
 path = "assets/captures/.gitkeep"
 
+[[assets]]
+path = "assets/models/yolo.cvimodel"
+
+[[assets]]
+path = "assets/models/coco.names"
+
+[[assets]]
+path = "assets/models/yolo.toml"
+
 [[resources.mounts]]
 asset_dir = "assets/captures"
 guest_path = "/captures"
+
+[[resources.read_only_mounts]]
+asset_dir = "assets/models"
+guest_path = "/app/assets/models"
 
 [resources.usb]
 paths = [
@@ -29,4 +42,4 @@ wasi = true
 "imago:usb" = ["*"]
 
 [target.default]
-remote = "ssh://root@192.168.2.3"
+remote = "ssh://root@192.168.2.4"
