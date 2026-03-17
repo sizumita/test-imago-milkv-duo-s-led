@@ -4,6 +4,11 @@
 `wasi-nn-cvitek` が有効な `imagod` 上で YOLOv5 INT8 `.cvimodel` を実行して、
 物体検出マーカー付きの JPEG を `/captures/last-frame.jpg` に保存し続ける Wasm guest です。
 
+## milkvのセットアップ
+
+- 公式サイトを参照してUSB-A側をセットアップする
+- sshの鍵を設定する
+
 ## 前提
 
 - `imagod` 側で `imago:usb` native plugin が有効
